@@ -1,0 +1,240 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Beige"
+    tools:context=".CafeDetailActivity">
+
+    <!-- ImageView placed outside the ScrollView -->
+    <ImageView
+        android:id="@+id/img_item_photo"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:gravity="center"
+        android:importantForAccessibility="no"
+        android:layout_marginBottom= "16dp"
+        android:scaleType= "centerCrop"
+        android:layout_marginTop="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <!-- ScrollView containing other elements -->
+    <TextView
+        android:id="@+id/tv_song_name"
+        style="@style/LayoutMatchWrap"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="start"
+        android:textAlignment="viewStart"
+        android:textColor="@android:color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/ratingBarDisplay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_item_photo" />
+
+    <!-- RatingBar to display the current rating -->
+    <RatingBar
+        android:id="@+id/ratingBarDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:scaleX="0.3"
+        android:scaleY="0.3"
+        android:stepSize="0.5"
+        app:layout_constraintEnd_toEndOf="@+id/tv_song_name"
+        app:layout_constraintStart_toStartOf="@+id/tv_song_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_song_name" />
+
+    <RelativeLayout
+        android:id="@+id/layout_btn_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_corner"
+        app:layout_constraintStart_toStartOf="@+id/tv_song_name"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBarDisplay">
+
+        <ImageButton
+            android:id="@+id/btn_location"
+            android:layout_width="45dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:backgroundTint="@color/Navy_light"
+            android:contentDescription="@string/location"
+            android:onClick="openLocation"
+            android:src="@drawable/baseline_location_pin_24" />
+
+        <TextView
+            android:id="@+id/tv_location_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:layout_toEndOf="@id/btn_location"
+            android:text="@string/location"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_btn_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/rounded_corner"
+        app:layout_constraintStart_toEndOf="@+id/layout_btn_location"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBarDisplay">
+
+        <ImageButton
+            android:id="@+id/btn_menu"
+            android:layout_width="45dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:backgroundTint="@color/Navy_light"
+            android:contentDescription="@string/menu"
+            android:onClick="openMenu"
+            android:src="@drawable/baseline_restaurant_menu_24" />
+
+        <TextView
+            android:id="@+id/tv_menu_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:layout_toEndOf="@id/btn_menu"
+            android:text="@string/menu"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@id/btnSubmitRating"
+        app:layout_constraintTop_toBottomOf="@id/ratingBarDisplay">
+
+        <LinearLayout
+            style="@style/LayoutMatchWrap"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_song_description"
+                style="@style/LayoutMatchWrap"
+                android:layout_gravity="center"
+                android:layout_margin="16dp"
+                android:justificationMode="inter_word"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/iv_image"
+                android:layout_width="30dp"
+                android:layout_gravity="start"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="0dp"
+                android:contentDescription="@string/location"
+                android:src="@drawable/baseline_location_on_24_biru"/>
+
+            <TextView
+                android:id="@+id/tv_alamat_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="20dp"
+                android:layout_gravity="start"
+                android:gravity="start"
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"/>
+
+            <ImageView
+                android:id="@+id/waktu_image"
+                android:layout_width="30dp"
+                android:layout_gravity="start"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:contentDescription="@string/location"
+                android:src="@drawable/baseline_access_time_24_biru"/>
+
+            <TextView
+                android:id="@+id/tv_waktu_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="20dp"
+                android:layout_gravity="start"
+                android:gravity="start"
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"/>
+
+            <Button
+                android:id="@+id/back_button"
+                style="@style/LayoutWrapContent"
+                android:layout_gravity="center"
+                android:onClick="gotoMain"
+                android:text="@string/goto_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- RatingBar to allow user to submit a new rating -->
+    <RatingBar
+        android:id="@+id/ratingBarInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:stepSize="0.5"
+        android:scaleX="0.5"
+        android:scaleY="0.5"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@id/btnSubmitRating"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Button atau ImageButton favorite -->
+    <ImageButton
+        android:id="@+id/btn_favorite"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/favorite"
+        android:src="@drawable/favorite_24dp_fill_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Back button -->
+    <Button
+        android:id="@+id/btnSubmitRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rating"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

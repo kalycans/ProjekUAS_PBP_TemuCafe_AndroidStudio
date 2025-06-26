@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <item
+        android:id="@+id/navigation_cafe"
+        android:icon="@drawable/baseline_local_cafe_black_24"
+        android:title="@string/title_cafe"
+        tools:layout="@layout/fragment_cafe" />
+
+    <item
+        android:id="@+id/navigation_favorite"
+        android:icon="@drawable/favorite_24dp_fill"
+        android:title="@string/title_favorite"
+        tools:layout="@layout/fragment_favorite" />
+
+</menu>
