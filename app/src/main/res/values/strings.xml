@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">TemuCafe</string>
+    <string name="splash_text">TemuCafe</string>
+    <string name="home">Beranda</string>
+    <string name="cafe">Cafe</string>
+    <string name="favorite">Favorit</string>
+    <string name="search_hint">Cari cafe...</string>
+    <string name="filter_region">Filter Wilayah</string>
+    <string name="no_favorite">Belum ada cafe favorit</string>
+    <string name="add_favorite">Tambahkan ke favorit</string>
+    <string name="remove_favorite">Hapus dari favorit</string>
+    <string name="open_maps">Buka di Maps</string>
+    <string name="distance_format">%.1f km dari lokasi Anda</string>
+    <string name="location_permission_required">Aplikasi membutuhkan izin lokasi untuk menampilkan cafe terdekat.</string>
+    <string name="grant_permission">Berikan Izin</string>
+    <string name="location_error">Gagal mendapatkan lokasi</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="wilayah_array">
+        <item>Semua</item>
+        <item>Jakarta Selatan</item>
+        <item>Jakarta Barat</item>
+        <item>Jakarta Timur</item>
+        <item>Jakarta Utara</item>
+        <item>Jakarta Pusat</item>
+    </string-array>
+
+</resources>
